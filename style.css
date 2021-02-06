@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap');
+
+body{
+    font-family: 'Oswald', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+}
+
+.container{
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+
+nav .nav-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+nav img{
+    max-width: 120px;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+nav ul li{
+    margin-left: 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.search #fname{
+    background-color: #F8F7F5;
+    padding: 25px;
+    border-radius: 10px 0 0 10px;
+    width: 400px;
+    border: 1px solid #F06C4E;
+    outline: none;
+}
+
+.search input[type='submit']{
+    background-color: #F06C4E;
+    color: #ffffff;
+    padding: 26px;
+    border-radius: 0 10px 10px 0;
+    border: none;
+    outline: none;
+    margin-left: -4px;
+    cursor: pointer;
+}
+
+#meals-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px;
+}
+
+#meals-container .item{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#meals-container .item p{
+    padding: 15px;
+}
+
+.ingredient-box,
+.alert{
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.ingredient-box.active,
+.alert.active{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ingredient-box .ingredient-container,
+.alert .alter-container{
+    width: 600px;
+    min-height: 300px;
+    padding: 50px;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+}
+
+.ingredient-box .ingredient-container{
+    max-width: 400px;
+    padding-top: 70px;
+}
+
+.ingredient-box .close,
+.alert .close{
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    z-index: 2;
+}
+
+.ingredient-box .close span,
+.alert .close span{
+    display: inline-block;
+    width: 35px;
+    height: 3px;
+    background-color: #333333;
+    transform: rotate(45deg);
+    position: relative;
+    z-index: -1;
+}
+
+.ingredient-box .close span::before,
+.alert .close span::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #333333;
+    top: 0;
+    left: 0;
+    transform: rotate(90deg);
+    z-index: -1;
+}
+
+.ingredient-box .title,
+.alert .title{
+    font-size: 25px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #F06C4E;
+}

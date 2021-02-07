@@ -4,14 +4,23 @@ body{
     font-family: 'Oswald', sans-serif;
 }
 
+body.no-scroll{
+    overflow: hidden;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
 }
 
 img{
     max-width: 100%;
+}
+
+ul{
+    list-style: none;
 }
 
 .container{
@@ -59,6 +68,7 @@ nav ul li a{
     width: 400px;
     border: 1px solid #F06C4E;
     outline: none;
+    font-size: 16px;
 }
 
 .search input[type='submit']{
@@ -70,6 +80,7 @@ nav ul li a{
     outline: none;
     margin-left: -4px;
     cursor: pointer;
+    font-size: 16px;
 }
 
 #meals-container{
@@ -93,21 +104,20 @@ nav ul li a{
 .alert{
     display: none;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, .5);
 }
 
-.ingredient-box.active,
 .alert.active{
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-y: auto;
 }
 
-.ingredient-box .ingredient-container,
 .alert .alter-container{
     width: 600px;
     min-height: 300px;
@@ -117,9 +127,30 @@ nav ul li a{
     position: relative;
 }
 
+.ingredient-box.active{
+    display: block;
+    overflow: auto;
+}
+
 .ingredient-box .ingredient-container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+}
+
+.ingredient-box .content{
     max-width: 400px;
-    padding-top: 70px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+    margin: 50px auto;
+}
+
+.ingredient-box .ingredient-container img{
+    max-width: 250px;
+    border-radius: 5px;
 }
 
 .ingredient-box .close,
@@ -163,4 +194,22 @@ nav ul li a{
     padding-bottom: 15px;
     margin-bottom: 15px;
     border-bottom: 1px solid #F06C4E;
+}
+
+.ingredient-box .sub-title{
+    padding-bottom: 10px;
+    border-bottom: 2px solid #F06C4E;
+    margin-bottom: 10px;
+}
+
+.ingredient-box li{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.ingredient-box li img{
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
 }

@@ -76,6 +76,7 @@ const showIngredient = id=>{
         .then(res=>res.json())
         .then(data=>{
             let mealInfo = data.meals[0];
+
             let ingredientInfo = ingredientBox.querySelector('.info');
 
             /*Generating html for ingredient popup*/
@@ -85,7 +86,7 @@ const showIngredient = id=>{
                         <ul>
                         `;
             for (let key of Object.keys(mealInfo)) {
-                if(key.includes('strIngredient') && mealInfo[key] !== null){
+                if(key.includes('strIngredient') && (mealInfo[key] !== null && mealInfo[key] !=="")){
                     html+= `<li><img src="./images/ingredients.png" alt=""><span>${mealInfo[key]}</span></li>`;
                 }
             }
